@@ -1,10 +1,28 @@
-import { get, post } from "./http";
+import { get, post } from './http';
 
 export default {
-  query: params => {
-    return get("http://localhost:8081//goods/goodAll", params);
+  login: data => {
+    return post('/auth/login', data);
   },
-  query2: data => {
-    return post("http://localhost:8081/data", data);
-  }
+  fetchUserList: params => {
+    return get('/user/fetchUserList', params);
+  },
+  addUser: data => {
+    return post('/user/addUser', data);
+  },
+  deleteUser: data => {
+    return post('/user/deleteUser', data);
+  },
+  updatePassword: data => {
+    return post('/user/updatePassword', data);
+  },
+  updateMyPassword: data => {
+    return post('/user/updateMyPassword', data);
+  },
+  updateUserStatus: data => {
+    return post('/user/updateUserStatus', data);
+  },
+  fetchLogList: params => {
+    return get('/log/fetchLogList', params);
+  },
 };
